@@ -32,7 +32,11 @@ app.use((req, res, next) => {
   next()
 })
 
+//Run on local host
+// app.listen(3000, () => {
+//   console.log('App has started!')
+// })
 
-app.listen(3000, () => {
-  console.log('App has started!')
-})
+//Update your call listen to check for Heroku's port environment variable
+const port = process.env.PORT || '3000'
+app.listen(port)
